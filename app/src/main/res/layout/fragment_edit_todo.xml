@@ -12,8 +12,8 @@
             name="radioListener"
             type="com.katheryn.todoapp.view.RadioClick" />
         <variable
-            name="listener"
-            type="com.katheryn.todoapp.view.ButtonAddTodoClickListener" />
+            name="saveListener"
+            type="com.katheryn.todoapp.view.TodoSaveChangesClick" />
     </data>
 
     <FrameLayout
@@ -40,10 +40,10 @@
                     android:id="@+id/radioHigh"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:checked="@{todo.priority==3?true:false}"
-                    android:onClick="@{(view)->radioListener.onRadioClick(view,3,todo)}"
                     android:tag="3"
-                    android:text="High Priority" />
+                    android:text="High Priority"
+                    android:checked="@{todo.priority==3?true:false}"
+                    android:onClick="@{(view)->radioListener.onRadioClick(view,3,todo)}"/>
 
                 <RadioButton
                     android:id="@+id/radioMedium"
@@ -127,7 +127,7 @@
                 android:layout_marginBottom="16dp"
                 android:layout_weight="1"
                 android:text="Add Todo"
-                android:onClick="@{listener::onButtonAddTodo}"
+                android:onClick="@{(view)->saveListener.onTodoSaveChangesClick(view, todo)}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />

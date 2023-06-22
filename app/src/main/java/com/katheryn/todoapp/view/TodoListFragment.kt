@@ -11,7 +11,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.room.util.ViewInfo
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.katheryn.todoapp.R
 import com.katheryn.todoapp.viewmodel.ListTodoViewModel
@@ -20,6 +19,11 @@ class TodoListFragment : Fragment() {
 private lateinit var viewModel:ListTodoViewModel
 private val todoListAdapter = TodoListAdapter(arrayListOf(),
     {item -> viewModel.clearTask(item)})
+
+//    private fun updateIsDone(is_done: Int, uuid: Int) {
+//        viewModel.updateTodoIsDone(is_done, uuid)
+//
+//    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
