@@ -25,7 +25,8 @@
     <fragment
         android:id="@+id/editTodoFragment"
         android:name="com.katheryn.todoapp.view.EditTodoFragment"
-        android:label="EditTodoFragment" >
+        android:label="EditTodoFragment"
+        tools:layout="@layout/fragment_edit_todo">
         <argument
             android:name="uuid"
             app:argType="integer" />
